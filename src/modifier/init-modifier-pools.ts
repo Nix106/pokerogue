@@ -581,18 +581,18 @@ function initRogueModifierPool() {
     new WeightedModifierType(modifierTypes.SUPER_EXP_CHARM, skipInLastClassicWaveOrDefault(8)),
     new WeightedModifierType(
       modifierTypes.RARE_FORM_CHANGE_ITEM,
-      () => Math.min(Math.ceil(globalScene.currentBattle.waveIndex / 50), 4) * 6,
-      24,
+      () => Math.min(Math.ceil(globalScene.currentBattle.waveIndex / 50), 4) * 12,
+      48,
     ),
     new WeightedModifierType(
       modifierTypes.MEGA_BRACELET,
       () => Math.min(Math.ceil(globalScene.currentBattle.waveIndex / 50), 4) * 9,
-      36,
+      48,
     ),
     new WeightedModifierType(
       modifierTypes.DYNAMAX_BAND,
       () => Math.min(Math.ceil(globalScene.currentBattle.waveIndex / 50), 4) * 9,
-      36,
+      48,
     ),
     new WeightedModifierType(
       modifierTypes.VOUCHER_PLUS,
