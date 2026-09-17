@@ -264,6 +264,10 @@
     "tier": "COMMON"
   },
   {
+    "move": "ZAP_CANNON",
+    "tier": "GREAT"
+  },
+  {
     "move": "ICY_WIND",
     "tier": "GREAT"
   },
@@ -365,6 +369,10 @@
   },
   {
     "move": "PSYCH_UP",
+    "tier": "COMMON"
+  },
+  {
+    "move": "ANCIENT_POWER",
     "tier": "COMMON"
   },
   {
@@ -516,6 +524,10 @@
     "tier": "GREAT"
   },
   {
+    "move": "SILVER_WIND",
+    "tier": "COMMON"
+  },
+  {
     "move": "METAL_SOUND",
     "tier": "GREAT"
   },
@@ -581,7 +593,7 @@
   },
   {
     "move": "MAGICAL_LEAF",
-    "tier": "GREAT"
+    "tier": "COMMON"
   },
   {
     "move": "CALM_MIND",
@@ -601,7 +613,7 @@
   },
   {
     "move": "SHOCK_WAVE",
-    "tier": "GREAT"
+    "tier": "COMMON"
   },
   {
     "move": "WATER_PULSE",
@@ -669,7 +681,7 @@
   },
   {
     "move": "WORRY_SEED",
-    "tier": "GREAT"
+    "tier": "COMMON"
   },
   {
     "move": "TOXIC_SPIKES",
@@ -693,6 +705,10 @@
   },
   {
     "move": "DARK_PULSE",
+    "tier": "GREAT"
+  },
+  {
+    "move": "NIGHT_SLASH",
     "tier": "GREAT"
   },
   {
@@ -733,7 +749,7 @@
   },
   {
     "move": "FOCUS_BLAST",
-    "tier": "GREAT"
+    "tier": "ULTRA"
   },
   {
     "move": "ENERGY_BALL",
@@ -842,6 +858,10 @@
   {
     "move": "CHARGE_BEAM",
     "tier": "GREAT"
+  },
+  {
+    "move": "OMINOUS_WIND",
+    "tier": "COMMON"
   },
   {
     "move": "HONE_CLAWS",
@@ -988,6 +1008,10 @@
     "tier": "GREAT"
   },
   {
+    "move": "DUAL_CHOP",
+    "tier": "GREAT"
+  },
+  {
     "move": "RAZOR_SHELL",
     "tier": "GREAT"
   },
@@ -1066,6 +1090,10 @@
   {
     "move": "POWER_UP_PUNCH",
     "tier": "GREAT"
+  },
+  {
+    "move": "FIRST_IMPRESSION",
+    "tier": "ULTRA"
   },
   {
     "move": "DARKEST_LARIAT",
@@ -1149,7 +1177,7 @@
   },
   {
     "move": "METEOR_BEAM",
-    "tier": "GREAT"
+    "tier": "ULTRA"
   },
   {
     "move": "MISTY_EXPLOSION",
