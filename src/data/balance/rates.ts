@@ -19,16 +19,16 @@ export const BASE_HIDDEN_ABILITY_RATE = 8192;
 // Threshold x at which a gacha egg is determined to be a certain tier
 // Specifically, the tier is determined by the highest threshold a random value between 0-255 meets or exceeds
 // Legendary Up Gacha raises these thresholds by 1, thereby giving Legendary eggs 2/256 chance
-export const GACHA_DEFAULT_COMMON_EGG_THRESHOLD = 192; // Default 64/256 chance
-export const GACHA_DEFAULT_RARE_EGG_THRESHOLD = 128; // Default 64/256 chance
-export const GACHA_DEFAULT_EPIC_EGG_THRESHOLD = 64; // Default 64/256 chance, leaving Legendary as 64/256 chance
+export const GACHA_DEFAULT_COMMON_EGG_THRESHOLD = 154; // Default 102/256 chance (~40%)
+export const GACHA_DEFAULT_RARE_EGG_THRESHOLD = 77; // Default 77/256 chance (~30%)
+export const GACHA_DEFAULT_EPIC_EGG_THRESHOLD = 26; // Default 51/256 chance (~20%), leaving Legendary as 26/256 chance (~10%)
 export const GACHA_LEGENDARY_UP_THRESHOLD_OFFSET = 1; // The offset to threshold for Legendary Up gacha eggs. +x/256 Legendary Egg chance, -x/256 Common Egg chance
 
 // The number of eggs without finding a certain tier egg it takes for egg pity to kick in and that tier to be forced
 // These numbers are roughly the 80% mark. That is, 80% of the time you'll get an egg before this gets triggered.
-export const EGG_PITY_LEGENDARY_THRESHOLD = 11;
-export const EGG_PITY_EPIC_THRESHOLD = 10;
-export const EGG_PITY_RARE_THRESHOLD = 9;
+export const EGG_PITY_LEGENDARY_THRESHOLD = 100;
+export const EGG_PITY_EPIC_THRESHOLD = 30;
+export const EGG_PITY_RARE_THRESHOLD = 20;
 
 // Waves to hatch an egg of a given tier
 export const HATCH_WAVES_COMMON_EGG = 5;
