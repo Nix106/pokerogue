@@ -2351,7 +2351,7 @@ let enemyBuffModifierPoolThresholds = {};
 // biome-ignore lint/correctness/noUnusedVariables: TODO explain why this is marked as OK
 let enemyBuffIgnoredPoolIndexes = {};
 
-const tierWeights = [768 / 1024, 195 / 1024, 48 / 1024, 12 / 1024, 1 / 1024];
+const tierWeights = [205 / 1024, 205 / 1024, 205 / 1024, 205 / 1024, 204 / 1024];
 /**
  * Allows a unit test to check if an item exists in the Modifier Pool. \
  * Checks the pool directly, rather than attempting to reroll for the item.
@@ -2811,13 +2811,13 @@ function getNewModifierTypeOption(
       } while (upgraded);
     }
 
-    if (tierValue > 255) {
+    if (tierValue > 818) {
       tier = ModifierTier.COMMON;
-    } else if (tierValue > 60) {
+    } else if (tierValue > 613) {
       tier = ModifierTier.GREAT;
-    } else if (tierValue > 12) {
+    } else if (tierValue > 408) {
       tier = ModifierTier.ULTRA;
-    } else if (tierValue) {
+    } else if (tierValue > 203) {
       tier = ModifierTier.ROGUE;
     } else {
       tier = ModifierTier.MASTER;

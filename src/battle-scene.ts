@@ -2368,7 +2368,8 @@ export class BattleScene extends SceneBase {
     const waveSetIndex = Math.ceil(waveIndex / 10) - 1;
     const moneyValue =
       Math.pow((waveSetIndex + 1 + (0.75 + (((waveIndex - 1) % 10) + 1) / 10)) * 100, 1 + 0.005 * waveSetIndex)
-      * moneyMultiplier;
+      * moneyMultiplier
+      * 3;
     return Math.floor(moneyValue / 10) * 10;
   }
 
