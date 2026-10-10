@@ -48,6 +48,7 @@ import type { DexEntry } from "#types/dex-data";
 import type { LevelMovesWithSource } from "#types/level-moves";
 import type { StarterPreferences } from "#types/save-data";
 import type { SpeciesDetails } from "#types/starter-select-types";
+import type { StarterSpeciesId } from "#types/starter-species-id";
 import type { OptionSelectIconConfig, OptionSelectItem, OptionSelectModeConfig } from "#types/ui-types";
 import { BaseStatsOverlay } from "#ui/base-stats-overlay";
 import { getLearnableMoveSourceIconFrame } from "#ui/learnable-move-utils";
@@ -263,7 +264,7 @@ export class PokedexPageUiHandler extends MessageUiHandler {
 
   private readonly allSpecies: PokemonSpecies[] = [];
   private species: PokemonSpecies; // TODO: add `| undefined`?
-  private starterId: SpeciesId;
+  private starterId: StarterSpeciesId;
   private formIndex: number;
   private readonly speciesLoaded: Map<SpeciesId, boolean> = new Map<SpeciesId, boolean>();
   private levelMoves: LevelMovesWithSource;
@@ -1120,7 +1121,7 @@ export class PokedexPageUiHandler extends MessageUiHandler {
    * @param speciesId the id of the species to check
    * @returns the id of the corresponding starter
    */
-  private getStarterSpeciesId(speciesId: SpeciesId): SpeciesId {
+  private getStarterSpeciesId(speciesId: SpeciesId): StarterSpeciesId {
     if (speciesId === SpeciesId.PIKACHU) {
       if ([0, 1, 8].includes(this.formIndex)) {
         return SpeciesId.PICHU;
@@ -1823,9 +1824,9 @@ export class PokedexPageUiHandler extends MessageUiHandler {
               this.savedStarterPreferences.shiny = starterPreferences.shiny;
             }
 
-            let newVariant = props.variant;
+            let newVariant = props.shiny ? props.variant : -1;
             do {
-              newVariant = ((newVariant + 1) % 3) as Variant;
+              newVariant = (newVariant + 1) % 3;
               if (newVariant === 0) {
                 if (this.isCaught() & DexAttr.DEFAULT_VARIANT) {
                   break;
@@ -1839,9 +1840,9 @@ export class PokedexPageUiHandler extends MessageUiHandler {
               }
             } while (newVariant !== props.variant);
 
-            starterPreferences.variant = newVariant;
+            starterPreferences.variant = newVariant as Variant;
             this.savedStarterPreferences.variant = starterPreferences.variant;
-            if (this.isCaught() & DexAttr.NON_SHINY && newVariant <= props.variant) {
+            if (props.shiny && this.isCaught() & DexAttr.NON_SHINY && newVariant <= props.variant) {
               this.setSpeciesDetails(this.species, {
                 shiny: false,
                 variant: 0,
@@ -2060,7 +2061,7 @@ export class PokedexPageUiHandler extends MessageUiHandler {
                 return true;
               },
             });
-            const optionSelectConfig: OptionSelectModeConfig = { options, yOffset: 47 };
+            const optionSelectConfig: OptionSelectModeConfig = { options };
             ui.setModeWithoutClear(UiMode.OPTION_SELECT, optionSelectConfig);
             success = true;
             break;
