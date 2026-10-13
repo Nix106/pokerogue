@@ -19,9 +19,9 @@ export const BASE_HIDDEN_ABILITY_RATE = 3;
 // Threshold x at which a gacha egg is determined to be a certain tier
 // Specifically, the tier is determined by the highest threshold a random value between 0-255 meets or exceeds
 // Legendary Up Gacha raises these thresholds by 1, thereby giving Legendary eggs 2/256 chance
-export const GACHA_DEFAULT_COMMON_EGG_THRESHOLD = 154; // Default 102/256 chance (~40%)
-export const GACHA_DEFAULT_RARE_EGG_THRESHOLD = 77; // Default 77/256 chance (~30%)
-export const GACHA_DEFAULT_EPIC_EGG_THRESHOLD = 26; // Default 51/256 chance (~20%), leaving Legendary as 26/256 chance (~10%)
+export const GACHA_DEFAULT_COMMON_EGG_THRESHOLD = 100; // Default 102/256 chance (~40%)
+export const GACHA_DEFAULT_RARE_EGG_THRESHOLD = 45; // Default 77/256 chance (~30%)
+export const GACHA_DEFAULT_EPIC_EGG_THRESHOLD = 20; // Default 51/256 chance (~20%), leaving Legendary as 26/256 chance (~10%)
 export const GACHA_LEGENDARY_UP_THRESHOLD_OFFSET = 1; // The offset to threshold for Legendary Up gacha eggs. +x/256 Legendary Egg chance, -x/256 Common Egg chance
 
 // The number of eggs without finding a certain tier egg it takes for egg pity to kick in and that tier to be forced
@@ -38,25 +38,25 @@ export const HATCH_WAVES_LEGENDARY_EGG = 8;
 export const HATCH_WAVES_MANAPHY_EGG = 8;
 
 // Rates for specific random properties in 1/x
-export const GACHA_DEFAULT_SHINY_RATE = 8;
-export const GACHA_SHINY_UP_SHINY_RATE = 4;
-export const SAME_SPECIES_EGG_SHINY_RATE = 4;
-export const SAME_SPECIES_EGG_HA_RATE = 8;
-export const MANAPHY_EGG_MANAPHY_RATE = 8;
-export const GACHA_EGG_HA_RATE = 8;
+export const GACHA_DEFAULT_SHINY_RATE = 2;
+export const GACHA_SHINY_UP_SHINY_RATE = 2;
+export const SAME_SPECIES_EGG_SHINY_RATE = 2;
+export const SAME_SPECIES_EGG_HA_RATE = 2;
+export const MANAPHY_EGG_MANAPHY_RATE = 2;
+export const GACHA_EGG_HA_RATE = 2;
 
 // Odds are 1/x
 // [COMMON, RARE, EPIC/MANAPHY, LEGEND]
-export const RARE_EGGMOVE_RATES: readonly number[] = [4, 4, 4, 2];
-export const BOOSTED_RARE_EGGMOVE_RATES: readonly number[] = [4, 4, 4, 2];
+export const RARE_EGGMOVE_RATES: readonly number[] = [1, 1, 1, 1];
+export const BOOSTED_RARE_EGGMOVE_RATES: readonly number[] = [1, 1, 1, 1];
 
 // #endregion Egg properties
 
 // #region Variant properties
 
 // The chance x/10 of a shiny being a variant, then of being specifically an epic variant
-export const SHINY_VARIANT_CHANCE = 7;
-export const SHINY_EPIC_CHANCE = 5;
+export const SHINY_VARIANT_CHANCE = 6;
+export const SHINY_EPIC_CHANCE = 3;
 
 // The catch rate bonus for shiny mons, introduced in Z-A. Can be boosted in events.
 export const SHINY_CATCH_RATE_MULTIPLIER = 8;
