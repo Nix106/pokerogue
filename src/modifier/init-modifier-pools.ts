@@ -288,7 +288,7 @@ function initGreatModifierPool() {
       () => (globalScene.gameMode.isClassic && globalScene.currentBattle.waveIndex < 180 ? 100 : 0),
       100,
     ),
-    new WeightedModifierType(modifierTypes.SOOTHE_BELL, 2),
+    new WeightedModifierType(modifierTypes.SOOTHE_BELL, timedEventManager.isSootheBellBoosted() ? 3 : 2),
     new WeightedModifierType(modifierTypes.TM_GREAT, 6),
     new WeightedModifierType(
       modifierTypes.MEMORY_MUSHROOM,
