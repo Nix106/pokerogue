@@ -1429,7 +1429,9 @@ export class MovesetRandomizerChallenge extends Challenge {
       levelMoves.splice(0);
       return false;
     }
-    if ([UiMode.POKEDEX, UiMode.POKEDEX_PAGE, UiMode.POKEDEX_SCAN].includes(globalScene.ui.mode)) {
+    const pokedexUiModes = [UiMode.POKEDEX, UiMode.POKEDEX_PAGE, UiMode.POKEDEX_SCAN];
+    const eggHatchUiModes = [UiMode.EGG_HATCH_SCENE, UiMode.EGG_HATCH_SUMMARY];
+    if ([...pokedexUiModes, ...eggHatchUiModes].includes(globalScene.ui.mode)) {
       return false;
     }
 
@@ -1643,8 +1645,10 @@ export class AbilityRandomizerChallenge extends Challenge {
   public override applySpeciesAbilityModify(speciesId: SpeciesId, abilityId: ValueHolder<AbilityId>): boolean {
     // Randomization is hidden during starter select and pokedex
     // so the player can't "game the system"
+    const pokedexUiModes = [UiMode.POKEDEX, UiMode.POKEDEX_PAGE, UiMode.POKEDEX_SCAN];
+    const eggHatchUiModes = [UiMode.EGG_HATCH_SCENE, UiMode.EGG_HATCH_SUMMARY];
     if (
-      [UiMode.POKEDEX, UiMode.POKEDEX_PAGE, UiMode.POKEDEX_SCAN].includes(globalScene.ui.mode)
+      [...pokedexUiModes, ...eggHatchUiModes].includes(globalScene.ui.mode)
       || globalScene.phaseManager.getCurrentPhase().is("SelectStarterPhase")
     ) {
       return false;
@@ -1653,15 +1657,16 @@ export class AbilityRandomizerChallenge extends Challenge {
     if (
       this.value > 2
       && [
-        AbilityId.SCHOOLING,
-        AbilityId.POWER_CONSTRUCT,
         AbilityId.BATTLE_BOND,
         AbilityId.DISGUISE,
         AbilityId.ICE_FACE,
-        AbilityId.ZERO_TO_HERO,
-        AbilityId.TERA_SHIFT,
-        AbilityId.TERA_SHELL,
+        AbilityId.POWER_CONSTRUCT,
+        AbilityId.SCHOOLING,
+        AbilityId.SHIELDS_DOWN,
         AbilityId.TERAFORM_ZERO,
+        AbilityId.TERA_SHELL,
+        AbilityId.TERA_SHIFT,
+        AbilityId.ZERO_TO_HERO,
       ].includes(abilityId.value)
     ) {
       return false;
@@ -1682,8 +1687,10 @@ export class AbilityRandomizerChallenge extends Challenge {
     }
     // Randomization is hidden during starter select and pokedex
     // so the player can't "game the system"
+    const pokedexUiModes = [UiMode.POKEDEX, UiMode.POKEDEX_PAGE, UiMode.POKEDEX_SCAN];
+    const eggHatchUiModes = [UiMode.EGG_HATCH_SCENE, UiMode.EGG_HATCH_SUMMARY];
     if (
-      [UiMode.POKEDEX, UiMode.POKEDEX_PAGE, UiMode.POKEDEX_SCAN].includes(globalScene.ui.mode)
+      [...pokedexUiModes, ...eggHatchUiModes].includes(globalScene.ui.mode)
       || globalScene.phaseManager.getCurrentPhase().is("SelectStarterPhase")
     ) {
       return false;
